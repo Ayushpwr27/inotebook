@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const { Schema } = mongoose;
+// A database schema is the skeleton structure that represents the logical view of the entire database.
 const UserSchema = new Schema({
     name:{
         type: String,
