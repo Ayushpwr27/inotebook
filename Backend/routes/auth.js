@@ -6,7 +6,7 @@ const bcrypt = require("bcryptjs");
 var jwt = require("jsonwebtoken");
 var fetchuser = require("../middleware/fetchuser")
 
-const JWT_SECRET = "@all&mighty$push";
+const JWT_SECRET = "@all&mighty$push"; // right now this secret code is hard coded which will be used in form of global variable
 // ROUTE 1:create a User Using: POST "/api/auth/createuser". no login required
 router.post(
   "/createuser",
