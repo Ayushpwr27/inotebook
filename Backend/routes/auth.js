@@ -58,6 +58,7 @@ router.post(
 router.post(
   "/login",
   [
+    // validating details and showing the message
     body("email", "Enter a valid email").isEmail(),
     body("password", "Password cannot be blank").exists(),
   ],
@@ -71,6 +72,7 @@ router.post(
     const { email, password } = req.body;
     try {
       let user = await User.findOne({ email });
+      // findOne is used to find a particular field such as email
       if (!user) {
         return res
           .status(400)
@@ -92,6 +94,7 @@ router.post(
           id: user.id,
         },
       };
+      // a token is generated using the secret key making it near impossible to decode
       const authtoken = jwt.sign(data, JWT_SECRET);
       res.json({ authtoken });
     } catch (error) {
@@ -107,7 +110,7 @@ router.post("/getuser", fetchuser ,async (req, res) => {
 
   try {
     const userId = req.user.id;
-    const user = await User.findById(userId).select("-password");
+    const user = await User.findById(userId).select("-password"); //find all the user details except the password thats why -password
     res.send(user);
   } catch (error) {
     console.error(error.message);
