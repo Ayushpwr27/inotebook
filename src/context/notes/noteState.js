@@ -22,7 +22,7 @@ const NoteState = (props) => {
             __v: 0,
         },
         {
-            _id: "64c3b527fc276913decbd291",
+            _id: "64c3b527tc276913decbd291",
             user: "64c3b2f84e0608f0cd36af8c",
             title: "mytitile",
             description: "Please wake up early",
@@ -31,7 +31,7 @@ const NoteState = (props) => {
             __v: 0,
         },
         {
-            _id: "64c3d94e889dcb9503a025bd",
+            _id: "64c3d94e8e9dcb9503a025bd",
             user: "64c3b2f84e0608f0cd36af8c",
             title: "mytitil 2",
             description: "Please wake up early and do brush your teeth",
@@ -40,7 +40,7 @@ const NoteState = (props) => {
             __v: 0,
         },
         {
-            _id: "64c3b527fc276913decbd291",
+            _id: "64c3b527fc276916decbd291",
             user: "64c3b2f84e0608f0cd36af8c",
             title: "mytitile",
             description: "Please wake up early",
@@ -49,7 +49,7 @@ const NoteState = (props) => {
             __v: 0,
         },
         {
-            _id: "64c3d94e889dcb9503a025bd",
+            _id: "64c3d94e889dhb9503a025bd",
             user: "64c3b2f84e0608f0cd36af8c",
             title: "mytitil 2",
             description: "Please wake up early and do brush your teeth",
@@ -58,7 +58,7 @@ const NoteState = (props) => {
             __v: 0,
         },
         {
-            _id: "64c3b527fc276913decbd291",
+            _id: "64c3b527fc176913decbd291",
             user: "64c3b2f84e0608f0cd36af8c",
             title: "mytitile",
             description: "Please wake up early",
@@ -67,7 +67,7 @@ const NoteState = (props) => {
             __v: 0,
         },
         {
-            _id: "64c3d94e889dcb9503a025bd",
+            _id: "64c3d94e888   cb9503a025bd",
             user: "64c3b2f84e0608f0cd36af8c",
             title: "mytitil 2",
             description: "Please wake up early and do brush your teeth",
