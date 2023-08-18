@@ -59,6 +59,8 @@ export const Notes = () => {
                         aria-describedby="emailHelp"
                         value={note.etitle}
                         onChange={onChange}
+                        minLength={5}
+                        required
                     />
                 </div>
                 <div className="mb-3">
@@ -72,6 +74,8 @@ export const Notes = () => {
                         name="edescription"
                         value={note.edescription}
                         onChange={onChange}
+                        minLength={5}
+                        required
                     />
                 </div>
                 <div className="mb-3">
@@ -92,7 +96,7 @@ export const Notes = () => {
             </div>
             <div className="modal-footer">
               <button ref={refClose} type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="button" className="btn btn-primary" onClick={handleClick}>Update Note</button>
+              <button disabled = {note.etitle.length<5 || note.edescription.length<5} type="button" className="btn btn-primary" onClick={handleClick}>Update Note</button>
             </div>
           </div>
         </div>
@@ -100,8 +104,10 @@ export const Notes = () => {
 
       <div className="row my-3">
         <h2>Your Notes</h2>
-        {
-          notes.map((note) => {
+        <div className="container mx-lg-4 my-lg-4">
+        {notes.length===0&& 'No notes to show'}
+        </div>
+        {notes.map((note) => {
             return <Noteitems key={note._id} note={note} updateNote={updateNote} />
           })
         }

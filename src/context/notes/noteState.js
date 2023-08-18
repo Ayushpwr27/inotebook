@@ -6,7 +6,6 @@ const NoteState = (props) => {
     const notesInitial = [];
     // eslint-disable-next-line no-unused-vars
     const [notes, setNotes] = useState(notesInitial)
-
     // Get all notes
     const getNotes = async() => {
         const response = await fetch(`${host}/api/notes/fetchallnotes`, {
@@ -15,7 +14,7 @@ const NoteState = (props) => {
                 "auth-token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjRjM2IyZjg0ZTA2MDhmMGNkMzZhZjhjIn0sImlhdCI6MTY5MDU0NzE3OX0.Z2xm0lwAmEvN8wg4ZGoU04DDiAmNkpcVI4U1b2il1dU"
             }
         });
-        const json = await response.json();
+        const json = await response.json() 
         setNotes(json)
     }
 
@@ -30,19 +29,7 @@ const NoteState = (props) => {
             body: JSON.stringify({title,description,tag})
         });
         // eslint-disable-next-line no-unused-vars
-        const json = response.json();
-
-        // TODO:  Api Call
-        const note = {
-            _id: "64c3d94e8884b9503a025bd",
-            user: "64c3b2f84e0608f0cd36af8c",
-            title: title,
-            description: description,
-            tag: tag,
-            date: "2023-07-28T15:05:50.942Z",
-            __v: 0,
-        };
-
+        const note = response.json();
         setNotes(notes.concat(note))
     }
     // Delete a Note 
@@ -60,6 +47,7 @@ const NoteState = (props) => {
         const json = response.json();
         const newNotes = notes.filter((note) => { return note._id !== id })
         setNotes(newNotes)
+        
     }
 
     // Edit a Note
