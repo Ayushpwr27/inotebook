@@ -67,6 +67,7 @@ const NoteState = (props) => {
             },
             body: JSON.stringify({title,description,tag})
         });
+        // eslint-disable-next-line no-unused-vars
         const json = response.json();
     // Logic to edit in client
     for (let index = 0; index < notes.length; index++) {
