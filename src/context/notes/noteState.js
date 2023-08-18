@@ -30,6 +30,7 @@ const NoteState = (props) => {
             },
             body: JSON.stringify({title,description,tag})
         });
+        // eslint-disable-next-line no-unused-vars
         const json = response.json();
 
         console.log("Adding a New Note")
