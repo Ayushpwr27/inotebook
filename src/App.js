@@ -16,7 +16,7 @@ function App() {
     <NoteState>
     <BrowserRouter>
     <Navbar />
-    <Alert  message = " This is a Notes App "/>
+    <Alert  message = " Welcome to iNotebook "/>
     <div className="container">
       <Routes>
         <Route path="/" element={<Home/>}></Route>
