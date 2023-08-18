@@ -78,8 +78,37 @@ const NoteState = (props) => {
     ];
     // eslint-disable-next-line no-unused-vars
     const [notes, setNotes] = useState(notesInitial) 
+
+
+    // Add a Note 
+    const addNote = (title,description,tag)=>{
+        console.log("Adding a New Note")
+        // TODO:  Api Call
+        const note ={
+            _id: "64c3d94e8884b9503a025bd",
+            user: "64c3b2f84e0608f0cd36af8c",
+            title: title,
+            description: description,
+            tag: tag,
+            date: "2023-07-28T15:05:50.942Z",
+            __v: 0,
+        };
+        setNotes(notes.concat(note))
+    }
+    // Delete a Note 
+    
+    const deleteNote = (n)=>{
+        
+    }
+
+    // Edit a Note
+    
+    const editNote = ()=>{
+        
+    }
+
     return (
-        <NoteContext.Provider value={{notes,setNotes}}>{props.children}</NoteContext.Provider>
+        <NoteContext.Provider value={{notes,addNote,deleteNote,editNote}}>{props.children}</NoteContext.Provider>
     );
 };
 
