@@ -3,7 +3,7 @@ import noteContext from "../context/notes/noteContext";
 import Noteitems from "./Noteitems";
 import AddNote from "./AddNote";
 
-export const Notes = () => {
+export const Notes = (props) => {
   const context = useContext(noteContext);
   // eslint-disable-next-line no-unused-vars
   const { notes, getNotes,editNote } = context;
@@ -20,10 +20,11 @@ export const Notes = () => {
     setNote({id:currentNote._id, etitle:currentNote.title,edescription:currentNote.description,etag:currentNote.tag})
   }
   const handleClick = (e) => {
-      e.preventDefault();
-      editNote(note.id,note.etitle,note.edescription,note.etag)
-      refClose.current.click();
-      
+    e.preventDefault();
+    editNote(note.id,note.etitle,note.edescription,note.etag)
+    refClose.current.click();
+    props.showAlert("Notes Updated","success")
+    
   };
   const onChange = (e) => {
       setNote({...note,[e.target.name]:e.target.value})
@@ -32,7 +33,7 @@ export const Notes = () => {
 
   return (
     <>
-      <AddNote />
+      <AddNote showAlert={props.showAlert} />
 
       <button ref={ref} type="button" className=" d-none btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
         
@@ -108,7 +109,7 @@ export const Notes = () => {
         {notes.length===0&& 'No notes to show'}
         </div>
         {notes.map((note) => {
-            return <Noteitems key={note._id} note={note} updateNote={updateNote} />
+            return <Noteitems key={note._id} note={note} showAlert={props.showAlert} updateNote={updateNote} />
           })
         }
       </div>
