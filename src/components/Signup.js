@@ -34,19 +34,19 @@ const onChange=(e)=>{
   return (
     <div className='container'>
       <form className="row g-3" onSubmit={handleSubmit}>
-        <div className="col-md-6">
+        <div className="col-md-12">
           <label htmlFor="name" className="form-label">Name</label>
           <input type="text" className="form-control" name='name' id="name" onChange={onChange} />
         </div>
-        <div className="col-md-6">
+        <div className="col-md-12">
           <label htmlFor="email" className="form-label">Email</label>
           <input type="email" className="form-control" name='email' id="email" onChange={onChange}/>
         </div>
-        <div className="col-md-6">
+        <div className="col-md-12">
           <label htmlFor="password" className="form-label">Password</label>
           <input type="password" className="form-control" email='password' name='password' id="password" required minLength={5} onChange={onChange}/>
         </div>
-        <div className="col-md-6">
+        <div className="col-md-12">
           <label htmlFor="cpassword" className="form-label">Confirm Password</label>
           <input type="password" className="form-control" id="cpassword" name='cpassword' required minLength={5} onChange={onChange}/>
         </div>
