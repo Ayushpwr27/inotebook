@@ -11,7 +11,7 @@ const NoteState = (props) => {
         const response = await fetch(`${host}/api/notes/fetchallnotes`, {
             method: "GET",
             headers: {
-                "auth-token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjRjM2IyZjg0ZTA2MDhmMGNkMzZhZjhjIn0sImlhdCI6MTY5MDU0NzE3OX0.Z2xm0lwAmEvN8wg4ZGoU04DDiAmNkpcVI4U1b2il1dU"
+                "auth-token":localStorage.getItem('token')
             }
         });
         const json = await response.json() 
@@ -24,7 +24,7 @@ const NoteState = (props) => {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
-                "auth-token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjRjM2IyZjg0ZTA2MDhmMGNkMzZhZjhjIn0sImlhdCI6MTY5MDU0NzE3OX0.Z2xm0lwAmEvN8wg4ZGoU04DDiAmNkpcVI4U1b2il1dU"
+                "auth-token":localStorage.getItem('token')
             },
             body: JSON.stringify({title,description,tag})
         });
@@ -40,11 +40,11 @@ const NoteState = (props) => {
             method: "DELETE",
             headers: {
                 "Content-Type": "application/json",
-                "auth-token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjRjM2IyZjg0ZTA2MDhmMGNkMzZhZjhjIn0sImlhdCI6MTY5MDU0NzE3OX0.Z2xm0lwAmEvN8wg4ZGoU04DDiAmNkpcVI4U1b2il1dU"
+                "auth-token":localStorage.getItem('token')
             }
         });
-        // eslint-disable-next-line no-unused-vars
         const json = response.json();
+        console.log(json)
         const newNotes = notes.filter((note) => { return note._id !== id })
         setNotes(newNotes)
         
@@ -58,12 +58,12 @@ const NoteState = (props) => {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json",
-                "auth-token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjRjM2IyZjg0ZTA2MDhmMGNkMzZhZjhjIn0sImlhdCI6MTY5MDU0NzE3OX0.Z2xm0lwAmEvN8wg4ZGoU04DDiAmNkpcVI4U1b2il1dU"
+                "auth-token":localStorage.getItem('token')
             },
             body: JSON.stringify({title,description,tag})
         });
-        // eslint-disable-next-line no-unused-vars
         const json = response.json();
+        console.log(json)
     let newNotes = JSON.parse(JSON.stringify(notes))
     // Logic to edit in client
     for (let index = 0; index < newNotes.length; index++) {

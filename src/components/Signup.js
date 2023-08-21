@@ -33,7 +33,8 @@ const onChange=(e)=>{
 
 
   return (
-    <div className='container'>
+    <div className='container mt-2'>
+    <h2>Create an Account to use iNotebook</h2>
       <form className="row g-3" onSubmit={handleSubmit}>
         <div className="col-md-12">
           <label htmlFor="name" className="form-label">Name</label>

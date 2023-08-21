@@ -18,8 +18,8 @@ const Login = (props) => {
         console.log(json);
         if (json.success) {
             // redirect
-            props.showAlert("Account created successfully","success")
             localStorage.setItem('token',json.authtoken);
+            props.showAlert("Account created successfully","success")
             Navigate("/");
         }
         else{
@@ -32,9 +32,10 @@ const Login = (props) => {
     }
 
     return (
-        <div>
+        <div className='mt-2'>
+        <h2>Login to Continue to iNotebook</h2>
             <form  onSubmit={handleSubmit}>
-                <div className="mb-3">
+                <div className="my-3">
                     <label htmlFor="email" className="form-label">Email address</label>
                     <input type="email" className="form-control" id="email" onChange={onChange} name="email" aria-describedby="emailHelp"/>
                         <div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div>

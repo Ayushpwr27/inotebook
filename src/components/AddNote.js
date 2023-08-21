@@ -2,7 +2,6 @@ import React, { useContext,useState } from "react";
 import noteContext from "../context/notes/noteContext";
 const AddNote = (props) => {
     const context = useContext(noteContext);
-    // eslint-disable-next-line no-unused-vars
     const { addNote } = context;
     const [note, setNote] = useState({title: "", description:"",tag:""})
     
